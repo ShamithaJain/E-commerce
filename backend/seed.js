@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const Item = require('./models/Item'); // adjust path if needed
 
 // Replace with your MongoDB URI
-const MONGO_URI = 'mongodb+srv://shamithajain04:QcmjFGG8b1oxCPjp@emailfeedback.ehw9h4q.mongodb.net/ecommerce';
+require('dotenv').config(); // load .env
+const MONGO_URI = process.env.MONGO_URI;
 
 mongoose.connect(MONGO_URI)
   .then(async () => {
