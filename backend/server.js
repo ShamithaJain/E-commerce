@@ -8,7 +8,11 @@ const itemRoutes = require('./routes/items');
 const cartRoutes = require('./routes/cart');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://ecomassign.netlify.app', // your Netlify frontend URL
+  credentials: true,                        // if you use cookies
+}));
+
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
